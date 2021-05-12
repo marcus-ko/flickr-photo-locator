@@ -1,9 +1,16 @@
-const express = require('express')
+const express = require('express');
+const app = express();
 const path = require('path');
+const router = express.Router();
 
-const app = express()
-const port = process.env.PORT || 3000 // Heroku will need the PORT environment variable
+router.get('/',function(req,res){
+  res.sendFile(path.join(__dirname+'/public/index.html'));
+  //__dirname : It will resolve to your project folder.
+});
 
-app.use(express.static(path.join(__dirname, 'build')));
 
-app.listen(port, () => console.log(`App is live on port ${port}!`))
+//add the router
+app.use(express.static(path.join(__dirname, 'public')));
+app.listen(process.env.port || 3000);
+
+console.log('Running at Port 3000');
