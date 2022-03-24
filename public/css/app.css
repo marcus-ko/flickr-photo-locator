@@ -294,7 +294,7 @@ main {
   background-size: cover !important;
   text-align: center;
   overflow: hidden;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
 }
 main.newBackground {
   background-color: blue;
