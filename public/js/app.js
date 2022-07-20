@@ -444,16 +444,16 @@ function autocomplete(inp, arr) {
     //     x[i].classList.remove("autocomplete-active");
     //   }
     // }
-    // function closeAllLists(elmnt) {
-    //   /*close all autocomplete lists in the document,
-    //   except the one passed as an argument:*/
-    //   var x = document.getElementsByClassName("autocomplete-items");
-    //   for (var i = 0; i < x.length; i++) {
-    //     if (elmnt != x[i] && elmnt != inp) {
-    //       x[i].parentNode.removeChild(x[i]);
-    //     }
-    //   }
-    // }
+    function closeAllLists(elmnt) {
+      /*close all autocomplete lists in the document,
+      except the one passed as an argument:*/
+      var x = document.getElementsByClassName("autocomplete-items");
+      for (var i = 0; i < x.length; i++) {
+        if (elmnt != x[i] && elmnt != inp) {
+          x[i].parentNode.removeChild(x[i]);
+        }
+      }
+    }
     /*execute a function when someone clicks in the document:*/
     document.addEventListener("click", function (e) {
         closeAllLists(e.target);
